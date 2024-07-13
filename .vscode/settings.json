@@ -1,0 +1,40 @@
+{
+  "editor.wordWrap": "on",
+  "editor.codeLens": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.definitionLinkOpensInPeek": true,
+  "editor.fontFamily": "JetBrains Mono, monospace",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.6,
+  "editor.rulers": [80, 100],
+  "editor.semanticHighlighting.enabled": false,
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "explorer.compactFolders": false,
+
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.sideBar.location": "right",
+  "workbench.iconTheme": "icons",
+
+  "files.autoSave": "afterDelay",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "php.validate.executablePath": "",
+  "liveServer.settings.donotVerifyTags": true,
+  "window.zoomLevel": 1,
+
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+
+  "prettier.enable": true,
+  "prettier.singleQuote": false,
+  "prettier.tabWidth": 2,
+  "prettier.semi": false
+}

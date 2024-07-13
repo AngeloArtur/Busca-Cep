@@ -1,0 +1,12 @@
+:host ::ng-deep .p-toolbar {
+  background: #0C4568 !important;
+  border-color: #0C4568;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+p-toolbar p {
+  font-weight: 900;
+  color: white;
+}
+
