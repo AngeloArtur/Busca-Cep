@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from '../../core/components/navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BuscaCepService } from '../../shared/services/busca-cep.service';
+import { CepDirective } from '../../shared/directives/cep.directive';
 
 @Component({
   selector: 'app-home',
@@ -17,20 +18,18 @@ import { BuscaCepService } from '../../shared/services/busca-cep.service';
     NavbarComponent,
     HttpClientModule,
     ButtonModule,
+    CepDirective,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   httpClient = inject(HttpClient);
-  constructor(
-    private urlCep: BuscaCepService,
-  ) {}
+  constructor(private urlCep: BuscaCepService) {}
 
   ngOnInit(): void {
     this.buscarCep();
   }
-
 
   public buscarCep() {
     this.urlCep.returnCep('01001000').subscribe((value) => {
