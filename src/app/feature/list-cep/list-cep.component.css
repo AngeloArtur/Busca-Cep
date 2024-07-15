@@ -1,0 +1,11 @@
+p-table {
+  width: 20rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  p-table {
+    width: 45rem;
+    padding: 0;
+  }
+}

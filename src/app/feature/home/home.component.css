@@ -1,25 +1,11 @@
-/* :host {
-  display: block;
-} */
-.img-location {
-  width: 18rem;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.6rem;
-
-  height: calc(100vh - 94px);
-}
-
+.img-location,
 .container p-floatLabel input {
   width: 18rem;
 }
 
-::ng-deep .container .p-button {
-  background-color: #5ABFAD;
-  border-color: #5ABFAD;
+@media (min-width: 768px) {
+  .img-location,
+  .container p-floatLabel input {
+    width: 20rem;
+  }
 }
