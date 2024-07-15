@@ -15,6 +15,7 @@
       required
       maxlength="8"
       appCep
+      (keyup.enter)="searchCep(cepInput.value)"
     />
     <label for="CEP">CEP</label>
   </p-floatLabel>
