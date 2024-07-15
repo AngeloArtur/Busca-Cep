@@ -1,21 +1,23 @@
+import { CepDataService } from './../../shared/services/cep-data.service';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { ICep } from '../../core/interfaces/icep';
 import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list-cep',
   standalone: true,
-  imports: [TableModule],
+  imports: [TableModule, ButtonModule, RouterLink],
   templateUrl: './list-cep.component.html',
   styleUrl: './list-cep.component.css',
 })
 export class ListCepComponent {
   cepData!: ICep;
-  constructor(private router: Router) {}
+  constructor(private cepDataService: CepDataService) {}
 
   ngOnInit() {
-    console.log(history.state.cepData)
-    this.cepData = history.state.cepData;
+    this.cepData = this.cepDataService.getCepData();
+    console.log(this.cepData);
   }
 }
