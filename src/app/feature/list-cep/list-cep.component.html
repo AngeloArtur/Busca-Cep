@@ -1,5 +1,5 @@
-<div class="card">
-    <p-table [value]="[cepData]" [tableStyle]="{'min-width': '50rem'}">
+<div class="container">
+    <p-table [value]="[cepData]" styleClass="large">
         <ng-template pTemplate="header">
             <tr>
                 <th>Logradouro</th>
@@ -19,4 +19,6 @@
             </tr>
         </ng-template>
     </p-table>
-</div>
+
+    <p-button routerLink="/">Voltar</p-button>
+  </div>
