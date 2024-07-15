@@ -1,0 +1,22 @@
+<div class="card">
+    <p-table [value]="[cepData]" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Logradouro</th>
+                <th>Cidade</th>
+                <th>Bairro</th>
+                <th>Estado</th>
+                <th>CEP</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <td>{{ rowData.logradouro }}</td>
+                <td>{{ rowData.localidade }}</td>
+                <td>{{ rowData.bairro }}</td>
+                <td>{{ rowData.uf }}</td>
+                <td>{{ rowData.cep }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
