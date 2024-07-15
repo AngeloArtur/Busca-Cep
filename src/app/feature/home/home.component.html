@@ -6,13 +6,17 @@
   />
 
   <p-floatLabel>
-    <input pInputText id="CEP" autocomplete="off" maxlength="8" appCep />
+    <input
+      [ngClass]="{ 'ng-invalid ng-dirty': isInvalid }"
+      pInputText
+      #cepInput
+      id="CEP"
+      autocomplete="off"
+      required
+      maxlength="8"
+      appCep
+    />
     <label for="CEP">CEP</label>
-  </p-floatLabel>
-
-  <p-floatLabel>
-    <input pInputText id="street" autocomplete="off" />
-    <label for="street">Logradouro</label>
   </p-floatLabel>
 
   <p-button
@@ -20,5 +24,6 @@
     icon="pi pi-search"
     iconPos="right"
     [raised]="true"
+    (click)="searchCep(cepInput.value)"
   />
 </div>
