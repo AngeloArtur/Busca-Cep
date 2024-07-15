@@ -18,6 +18,5 @@ export class ListCepComponent {
 
   ngOnInit() {
     this.cepData = this.cepDataService.getCepData();
-    console.log(this.cepData);
   }
 }

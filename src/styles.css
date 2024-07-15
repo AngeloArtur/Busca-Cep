@@ -3,6 +3,10 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
+:root {
+  --primary-color: #0C4568;
+  --secondary-color: #5ABFAD;
+}
 html,
 body {
   width: 100%;
@@ -26,6 +30,6 @@ body {
 }
 
 .container .p-button {
-  background-color: #5ABFAD;
-  border-color: #5ABFAD;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
