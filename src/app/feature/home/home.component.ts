@@ -1,12 +1,19 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from '../../core/components/navbar/navbar.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BuscaCepService } from '../../shared/services/busca-cep.service';
 import { CepDirective } from '../../shared/directives/cep.directive';
+import { Router, RouterLink } from '@angular/router';
+import { ICep } from '../../core/interfaces/icep';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -19,21 +26,31 @@ import { CepDirective } from '../../shared/directives/cep.directive';
     HttpClientModule,
     ButtonModule,
     CepDirective,
+    RouterLink,
+    NgClass
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
-  httpClient = inject(HttpClient);
-  constructor(private urlCep: BuscaCepService) {}
+export class HomeComponent {
+  isInvalid: boolean = false;
+  constructor(
+    private cepService: BuscaCepService,
+    private router: Router,
+  ) {}
 
-  ngOnInit(): void {
-    this.buscarCep();
-  }
+  @ViewChild('cepInput') cep!: ElementRef;
 
-  public buscarCep() {
-    this.urlCep.returnCep('01001000').subscribe((value) => {
-      console.log(value);
-    });
+  public searchCep(cep: string) {
+    const cepNumbers = cep.replace('-', '');
+    if (cep.length === 0) {
+      this.isInvalid = true;
+      console.log(this.isInvalid)
+    } else {
+      this.cepService.returnCep(cepNumbers).subscribe((value: ICep) => {
+        console.log(value);
+        this.router.navigate(['/cep']), { state: { cepData: value } };
+      });
+    }
   }
 }
